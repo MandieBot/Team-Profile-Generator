@@ -22,4 +22,7 @@ describe("Add an employee", () => {
   it("Test getEmail function", () => {
     expect(employee.getEmail()).toBe("mandie@gmail.com");
   });
+  it("Test getRole function", () => {
+    expect(employee.getRole()).toBe("Employee");
+  });
 });

@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateTeam = require("./dist/generatePage.js");
 
 const employees = [];
 
@@ -67,7 +68,7 @@ const internQuestions = [
   },
   {
     type: "input",
-    name: "education",
+    name: "school",
     message: "Where is your Intern completing their education?",
   },
 ];
