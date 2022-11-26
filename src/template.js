@@ -1,11 +1,11 @@
 function generateTeam(teamData) {
   const managerCard = (manager) => {
     return `<div class="card" style="width: 18rem;">
-  <div class="card-header">
+  <div class="card-header border border-secondary">
     ${manager.getName()}
   </div>
   <h3>${manager.getRole()}</h3>
-  <ul class="list-group list-group-flush">
+  <ul class="list-group list-group-flush .fs-2 text">
     <li class="list-group-item">${manager.getId()}</li>
     <li class="list-group-item">${manager.getEmail()}</li>
     <li class="list-group-item">${manager.getOfficeNumber()}</li>
@@ -13,10 +13,8 @@ function generateTeam(teamData) {
 </div>`;
   };
   const engineerCard = (engineer) => {
-    return `
-    
-    <div class="card" style="width: 18rem;">
-      <div class="card-header">${engineer.getName()}</div>
+    return `<div class="card" style="width: 18rem;">
+      <div class="card-header border border-primary">${engineer.getName()}</div>
       <h3>${engineer.getRole()}
       <ul class="list-group list-group-flush">
         <li class="list-group-item">${engineer.getId()}</li>
@@ -27,7 +25,7 @@ function generateTeam(teamData) {
   };
   const internCard = (intern) => {
     return `<div class="card" style="width: 18rem;">
-  <div class="card-header">
+  <div class="card-header border border-info">
     ${intern.getName()}
   </div>
   <h3>${intern.getRole()}
@@ -62,8 +60,10 @@ module.exports = (teamData) => {
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-<h1>My Team</h1>
-<main class="container d-flex flex-wrap justify-content-center align-content-center|" style="min-height: 90vh">
+<header class="container-fluid text-center text-dark bg-light p-2 mb-4">
+  <h1>My Team</h1>
+</header>
+<main class="container d-flex flex-wrap justify-content-center align-content-center" style="min-height: 90vh">
 ${generateTeam(teamData)}
 </main>
 </body>
