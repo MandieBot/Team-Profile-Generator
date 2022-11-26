@@ -2,6 +2,9 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateTeam = require("./src/template.js");
 const path = require("path");
+const Engineer = require("./lib/engineer.js");
+const Manager = require("./lib/manager.js");
+const Intern = require("./lib/intern.js");
 const distDir = path.resolve(__dirname, "dist");
 const htmlFile = path.join(distDir, "index.html");
 
@@ -89,8 +92,7 @@ function roleSurvey() {
   inquirer.prompt(roleQuestion).then((response) => {
     if (response.role === "Engineer") {
       engSurvey();
-    }
-    if (response.role === "Intern") {
+    } else if (response.role === "Intern") {
       internSurvey();
     } else {
       writeHtml();
@@ -99,30 +101,31 @@ function roleSurvey() {
 }
 
 function engSurvey() {
-  console.log("test");
   inquirer.prompt(engQuestions).then((response) => {
-    console.log("test");
-    employees.push(response);
+    const engineerClass = new Engineer(response.name, response.id, response.email, response.github);
+    employees.push(engineerClass);
     roleSurvey();
   });
 }
 
 function internSurvey() {
   inquirer.prompt(internQuestions).then((response) => {
-    employees.push(response);
+    const internClass = new Intern(response.name, response.id, response.email, response.school);
+    employees.push(internClass);
     roleSurvey();
   });
 }
 
 function initialize() {
   inquirer.prompt(managerQuestions).then((response) => {
-    employees.push(response);
+    const managerClass = new Manager(response.name, response.id, response.email, response.officeNumber);
+    employees.push(managerClass);
     roleSurvey();
   });
 }
 
 function writeHtml() {
-  fs.writeFile(htmlFile, generateTeam(employees), "utf-8");
+  fs.writeFileSync(htmlFile, generateTeam(employees), "utf-8");
   console.log("Team Profile Generated!");
 }
 

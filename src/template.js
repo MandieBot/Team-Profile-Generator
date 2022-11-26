@@ -8,7 +8,7 @@ function generateTeam(teamData) {
   <ul class="list-group list-group-flush">
     <li class="list-group-item">${manager.getId()}</li>
     <li class="list-group-item">${manager.getEmail()}</li>
-    <li class="list-group-item">${manager.getofficeNumber()}</li>
+    <li class="list-group-item">${manager.getOfficeNumber()}</li>
   </ul>
 </div>`;
   };
@@ -45,6 +45,8 @@ function generateTeam(teamData) {
   allCards.push(teamData.filter((employee) => employee.getRole() === "Engineer").map((engineer) => engineerCard(engineer)));
 
   allCards.push(teamData.filter((employee) => employee.getRole() === "Intern").map((intern) => internCard(intern)));
+
+  return allCards.join();
 }
 
 module.exports = (teamData) => {
@@ -61,7 +63,9 @@ module.exports = (teamData) => {
 </head>
 <body>
 <h1>My Team</h1>
+<main class="container d-flex flex-wrap justify-content-center align-content-center|" style="min-height: 90vh">
 ${generateTeam(teamData)}
+</main>
 </body>
 </html>
   `;
