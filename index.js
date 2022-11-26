@@ -1,6 +1,9 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateTeam = require("./dist/generatePage.js");
+const generateTeam = require("./src/template.js");
+const path = require("path");
+const distDir = path.resolve(__dirname, "dist");
+const htmlFile = path.join(distDir, "index.html");
 
 const employees = [];
 
@@ -90,7 +93,7 @@ function roleSurvey() {
     if (response.role === "Intern") {
       internSurvey();
     } else {
-      console.log(employees); //done adding members
+      writeHtml();
     }
   });
 }
@@ -116,4 +119,10 @@ function initialize() {
     roleSurvey();
   });
 }
+
+function writeHtml() {
+  fs.writeFile(htmlFile, generateTeam(employees), "utf-8");
+  console.log("Team Profile Generated!");
+}
+
 initialize();
