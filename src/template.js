@@ -60,7 +60,7 @@ module.exports = (teamData) => {
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-<header class="container-fluid text-center text-dark bg-light p-2 mb-4">
+<header class="container-fluid text-center text-light bg-danger p-2 mb-4">
   <h1>My Team</h1>
 </header>
 <main class="container d-flex flex-wrap justify-content-center align-content-center" style="min-height: 90vh">
