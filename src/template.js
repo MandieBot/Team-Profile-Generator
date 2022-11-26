@@ -38,15 +38,14 @@ function generateTeam(teamData) {
   </ul>
 </div>`;
   };
+  const allCards = [];
+
+  allCards.push(teamData.filter((employee) => employee.getRole() === "Manager").map((manager) => managerCard(manager)));
+
+  allCards.push(teamData.filter((employee) => employee.getRole() === "Engineer").map((engineer) => engineerCard(engineer)));
+
+  allCards.push(teamData.filter((employee) => employee.getRole() === "Intern").map((intern) => internCard(intern)));
 }
-
-const allCards = [];
-
-allCards.push(teamData.filter((employee) => employee.getRole() === "Manager").map((manager) => managerCard(manager)));
-
-allCards.push(teamData.filter((employee) => employee.getRole() === "Engineer").map((engineer) => engineerCard(engineer)));
-
-allCards.push(teamData.filter((employee) => employee.getRole() === "Intern").map((intern) => internCard(intern)));
 
 module.exports = (teamData) => {
   return `
