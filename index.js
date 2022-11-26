@@ -99,9 +99,10 @@ function roleSurvey() {
 }
 
 function engSurvey() {
+  console.log("test");
   inquirer.prompt(engQuestions).then((response) => {
+    console.log("test");
     employees.push(response);
-    console.log(employees);
     roleSurvey();
   });
 }
