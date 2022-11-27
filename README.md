@@ -34,3 +34,5 @@ Enter command npm run test from the root directory to run tests and debug.
 [MandieBot](https://github.com/MandieBot)
 
 For additional information, please reach out to amandabotinelly@gmail.com.
+
+[Screencastify Video Demo] (https://drive.google.com/file/d/1cNUOm_BBCVmrCi_Nr_aypl9EBksj476S/view)
