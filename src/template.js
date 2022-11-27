@@ -6,9 +6,9 @@ function generateTeam(teamData) {
   </div>
   <h3>${manager.getRole()}</h3>
   <ul class="list-group list-group-flush .fs-2 text">
-    <li class="list-group-item">${manager.getId()}</li>
-    <li class="list-group-item">${manager.getEmail()}</li>
-    <li class="list-group-item">${manager.getOfficeNumber()}</li>
+    <li class="list-group-item">ID: ${manager.getId()}</li>
+    <li class="list-group-item">Email: ${manager.getEmail()}</li>
+    <li class="list-group-item">Office Number: ${manager.getOfficeNumber()}</li>
   </ul>
 </div>`;
   };
@@ -17,9 +17,9 @@ function generateTeam(teamData) {
       <div class="card-header border border-primary">${engineer.getName()}</div>
       <h3>${engineer.getRole()}
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">${engineer.getId()}</li>
-        <li class="list-group-item">${engineer.getEmail()}</li>
-        <li class="list-group-item">${engineer.getGithub()}</li>
+        <li class="list-group-item">ID: ${engineer.getId()}</li>
+        <li class="list-group-item">Email: ${engineer.getEmail()}</li>
+        <li class="list-group-item">GitHub: ${engineer.getGithub()}</li>
       </ul>
     </div>`;
   };
@@ -30,9 +30,9 @@ function generateTeam(teamData) {
   </div>
   <h3>${intern.getRole()}
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">${intern.getId()}</li>
-    <li class="list-group-item">${intern.getEmail()}</li>
-    <li class="list-group-item">${intern.getSchool()}</li>
+    <li class="list-group-item">ID: ${intern.getId()}</li>
+    <li class="list-group-item">Email: ${intern.getEmail()}</li>
+    <li class="list-group-item">Education: ${intern.getSchool()}</li>
   </ul>
 </div>`;
   };
